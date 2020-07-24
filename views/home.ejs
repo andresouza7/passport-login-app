@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Home</title>
+	</head>
+	<body>
+		<h1>Home</h1>
+		<hr />
+		<p>Click <a href="/user/protected"> here </a>to go to a protected area</p>
+		<% if (user) { %>
+		<h1>Welcome <%= user.username %></h1>
+        <a href="/auth/logout">Logout</a>
+		<% } else { %>
+		<h4>New here? Create an account.</h4>
+		<a href="/auth/register">Register</a>
+		<h4>Already a user? Sign in.</h4>
+		<a href="/auth/login">Login</a>
+		<% } %>
+	</body>
+</html>
